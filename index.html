@@ -200,7 +200,7 @@ h1,h2,h3{font-family:var(--font-d);line-height:1.02;margin:0;letter-spacing:-.03
   .pin .wrap{display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:"cats" "vis" "detail" "bar";gap:18px}
   .pin .wrap>[data-anim="fly-left"]{display:contents}
   .cats{grid-area:cats}
-  .vis{grid-area:vis;position:relative;height:clamp(220px,58vw,320px);width:100%;border-radius:24px;background:radial-gradient(ellipse at center,#fff 0%,#f5f5f5 75%);overflow:hidden}
+  .vis{grid-area:vis;position:relative;height:clamp(320px,100vw,420px);width:100%;border-radius:24px;background:radial-gradient(ellipse at center,#fff 0%,#f5f5f5 75%);overflow:hidden}
   .detail{grid-area:detail}
   .bar{grid-area:bar}
   .cats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
@@ -211,7 +211,7 @@ h1,h2,h3{font-family:var(--font-d);line-height:1.02;margin:0;letter-spacing:-.03
   .bar{margin-top:18px}
   .sdev{display:none;position:absolute;inset:0;height:auto;opacity:1;transform:none}
   .sdev.active{display:grid}
-  .sdev.active img{width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain}
+  .sdev.active img{width:100%;height:100%;min-width:0;min-height:0;max-width:100%;max-height:100%;box-sizing:border-box;object-fit:contain;object-position:center}
 }
 
 /* números */
@@ -484,6 +484,61 @@ dialog.sdlg[open]{display:block}
   .vis{display:block;height:clamp(220px,58vw,320px)}
   .sdev{position:absolute;height:auto}
   .sdev.active{display:grid}
+}
+@media (max-width:860px){
+  .hz{height:auto!important}
+  .hz-pin{position:static;top:auto;height:auto;min-height:0;overflow:visible;display:block;padding:76px 0 64px}
+  .hz-track{width:min(1180px,100% - 40px);margin-inline:auto;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;transform:none!important;will-change:auto}
+  .hz-head{grid-column:1/-1;flex:auto;padding:0 0 14px}
+  .hz-head h2{font-size:clamp(44px,10vw,76px)}
+  .hz-card{min-width:0;width:100%;flex:auto;border-radius:22px;padding:14px}
+  .hz-card .media{height:clamp(150px,36vw,220px);padding:5%}
+  .hz-card .media img{min-width:0;min-height:0;box-sizing:border-box;object-fit:contain}
+  .hz-bar{display:none}
+  .mani .wd{opacity:1}
+  .tl-fill{transform:none}
+  .st.on .n{transform:none}
+}
+@media (max-width:560px){
+  .wrap{width:calc(100% - 32px)}
+  .hero{padding-top:120px;padding-bottom:54px}
+  .hero .wrap{gap:0}
+  .hero h1{font-size:clamp(42px,11vw,60px)}
+  .stage{max-width:min(440px,calc(100vw - 32px));aspect-ratio:1.08/1}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .p{padding:8px 8px 14px;border-radius:20px}
+  .p .media{height:clamp(150px,46vw,220px);border-radius:15px;padding:3%}
+  .p h3{font-size:16px;margin:12px 5px 5px}
+  .specs{font-size:12px;margin:0 5px 12px}
+  .p .buy{margin-inline:5px;gap:6px;flex-wrap:wrap}
+  .p .price{font-size:22px}
+  .p .btn{padding:10px 12px;font-size:13px}
+  .filters{gap:10px}
+  .range{flex-wrap:wrap}
+  .range input{flex:1;min-width:110px}
+  .sort{max-width:100%;margin-left:auto}
+  .shop{padding:72px 0}
+  .hz-track{width:calc(100% - 32px);grid-template-columns:minmax(0,1fr);gap:14px}
+  .hz-head{grid-column:auto}
+  .hz-card{padding:16px}
+  .hz-card .media{height:clamp(190px,56vw,260px)}
+  .tiles{grid-template-columns:1fr}
+  .foot{padding:76px 0 32px}
+  .foot h2{font-size:clamp(40px,12vw,66px)}
+  .mq{width:auto;max-width:100%;flex-direction:column;animation:none;padding:0}
+  .mq>.q:nth-child(n+7){display:none}
+  .q{width:100%;flex-basis:auto}
+}
+@media (max-width:380px){
+  .wrap{width:calc(100% - 28px)}
+  .grid{grid-template-columns:minmax(0,1fr)}
+  .p .media{height:clamp(210px,68vw,270px)}
+  .stats .wrap{gap:30px 12px}
+  .stat b{font-size:clamp(40px,14vw,58px)}
+  .nav .wrap{width:calc(100% - 24px)}
+  .navr{gap:7px}
+  .ic,.burger{width:40px;height:40px}
+  .hz-track{width:calc(100% - 28px)}
 }
 </style>
 </head>
@@ -846,6 +901,7 @@ const media=p=>IMG[p.id]?`<img src="${IMG[p.id]}" alt="${p.name}" loading="lazy"
 /* ====== utilidades ====== */
 const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
 const rm=matchMedia('(prefers-reduced-motion: reduce)');
+const mobilePerf=matchMedia('(max-width: 860px)');
 const wa=t=>`https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
 document.querySelectorAll('[data-wa]').forEach(a=>{a.href=wa(a.dataset.wa);a.target='_blank';a.rel='noopener'});
 const phoneBack=()=>`<svg viewBox="0 0 200 400" aria-hidden="true"><rect x="8" y="4" width="184" height="392" rx="38" fill="url(#bodyD)"/><rect x="14" y="10" width="172" height="380" rx="33" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="2"/><rect x="24" y="24" width="88" height="88" rx="26" fill="#0c0c0c" stroke="#3a3a3a" stroke-width="2"/><circle cx="52" cy="52" r="17" fill="#050505" stroke="#555" stroke-width="3"/><circle cx="52" cy="52" r="8" fill="#1c2430"/><circle cx="86" cy="52" r="17" fill="#050505" stroke="#555" stroke-width="3"/><circle cx="86" cy="52" r="8" fill="#1c2430"/><circle cx="69" cy="88" r="17" fill="#050505" stroke="#555" stroke-width="3"/><circle cx="69" cy="88" r="8" fill="#1c2430"/><circle cx="96" cy="88" r="4.5" fill="#E10600"/><rect x="83" y="236" width="34" height="34" rx="10" fill="#fff"/><rect x="95" y="244" width="10" height="18" rx="2" fill="#E10600"/><rect x="91" y="248" width="18" height="10" rx="2" fill="#E10600"/></svg>`;
@@ -934,7 +990,7 @@ const hz=document.getElementById('hz'),hzTrack=document.getElementById('hzTrack'
 });
 let hzDist=0;
 function sizeHz(){
-  if(rm.matches){hz.style.height='';return}
+  if(rm.matches||mobilePerf.matches){hz.style.height='';hzDist=0;return}
   hzDist=Math.max(0,hzTrack.scrollWidth-innerWidth+40);
   hz.style.height=(hzDist+innerHeight)+'px';
 }
@@ -1135,8 +1191,15 @@ function frame(){
   let si=0;SL.forEach((e,i)=>{if(e.getBoundingClientRect().top<=vh*.45)si=i});
   if(vh+y>=document.documentElement.scrollHeight-4)si=SL.length-1;
   setSlide(si);
-  root.style.setProperty('--s',clamp(y/vh,0,1.2).toFixed(3));
+  if(!mobilePerf.matches)root.style.setProperty('--s',clamp(y/vh,0,1.2).toFixed(3));
   if(rm.matches)return;
+  if(mobilePerf.matches){
+    const tr=tl.getBoundingClientRect();
+    const tp=clamp((vh*.7-tr.top)/tr.height,0,1);
+    tl.style.setProperty('--tp',tp.toFixed(3));
+    steps.forEach(s=>{const sr=s.getBoundingClientRect();s.classList.toggle('on',sr.top<vh*.72)});
+    return;
+  }
 
   // manifiesto
   const mr=maniEl.getBoundingClientRect();
