@@ -327,17 +327,6 @@ document.getElementById('tiles').innerHTML=FAM.map((f,i)=>`<div class="tile rv" 
   `<div class="tile big rv"><div><p>Remate de iPad</p><span>iPad desde los $50</span></div><a class="btn btn-gold mag" href="#tienda" data-filter="ipad">Comienza aquí</a></div>`;
 document.querySelectorAll('.rv').forEach(el=>cardIO.observe(el));
 
-/* inclinación 3D de las fotos */
-if(!rm.matches){
-  grid.addEventListener('pointermove',e=>{
-    const m=e.target.closest('.media');if(!m)return;
-    const r=m.getBoundingClientRect();
-    m.style.setProperty('--ry',(((e.clientX-r.left)/r.width-.5)*14).toFixed(1)+'deg');
-    m.style.setProperty('--rx',(-((e.clientY-r.top)/r.height-.5)*14).toFixed(1)+'deg');
-  });
-  grid.addEventListener('pointerout',e=>{const m=e.target.closest('.media');if(m){m.style.setProperty('--rx','0deg');m.style.setProperty('--ry','0deg')}});
-}
-
 /* ====== testimonios ====== */
 const V=[
   ['La experiencia de compra fue excelente de principio a fin. Me asesoraron de manera clara y profesional.','María Fernanda','Compra de iPad, Plaza Quil'],
