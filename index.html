@@ -481,7 +481,7 @@ dialog.sdlg[open]{display:block}
   .pin{position:static;height:auto}
   .pin .wrap{display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:"cats" "vis" "detail" "bar";gap:18px}
   .pin .wrap>[data-anim="fly-left"]{display:contents}
-  .vis{display:block;height:clamp(220px,58vw,320px)}
+  .vis{display:block;height:clamp(400px,115vw,500px)}
   .sdev{position:absolute;height:auto}
   .sdev.active{display:grid}
 }
@@ -501,6 +501,7 @@ dialog.sdlg[open]{display:block}
 }
 @media (max-width:560px){
   .wrap{width:calc(100% - 32px)}
+  .vis{height:clamp(400px,115vw,500px)}
   .hero{padding-top:120px;padding-bottom:54px}
   .hero .wrap{gap:0}
   .hero h1{font-size:clamp(42px,11vw,60px)}
