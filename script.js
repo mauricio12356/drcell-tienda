@@ -114,6 +114,7 @@ const media=p=>IMG[p.id]?`<img src="${IMG[p.id]}" alt="${p.name}" loading="lazy"
 /* ====== utilidades ====== */
 const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
 const rm=matchMedia('(prefers-reduced-motion: reduce)');
+const mobilePerf=matchMedia('(max-width: 860px)');
 const wa=t=>`https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
 document.querySelectorAll('[data-wa]').forEach(a=>{a.href=wa(a.dataset.wa);a.target='_blank';a.rel='noopener'});
 const phoneBack=()=>`<svg viewBox="0 0 200 400" aria-hidden="true"><rect x="8" y="4" width="184" height="392" rx="38" fill="url(#bodyD)"/><rect x="14" y="10" width="172" height="380" rx="33" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="2"/><rect x="24" y="24" width="88" height="88" rx="26" fill="#0c0c0c" stroke="#3a3a3a" stroke-width="2"/><circle cx="52" cy="52" r="17" fill="#050505" stroke="#555" stroke-width="3"/><circle cx="52" cy="52" r="8" fill="#1c2430"/><circle cx="86" cy="52" r="17" fill="#050505" stroke="#555" stroke-width="3"/><circle cx="86" cy="52" r="8" fill="#1c2430"/><circle cx="69" cy="88" r="17" fill="#050505" stroke="#555" stroke-width="3"/><circle cx="69" cy="88" r="8" fill="#1c2430"/><circle cx="96" cy="88" r="4.5" fill="#E10600"/><rect x="83" y="236" width="34" height="34" rx="10" fill="#fff"/><rect x="95" y="244" width="10" height="18" rx="2" fill="#E10600"/><rect x="91" y="248" width="18" height="10" rx="2" fill="#E10600"/></svg>`;
@@ -390,6 +391,7 @@ function frame(){
   const total=document.documentElement.scrollHeight-vh;
   prog.style.setProperty('--pg',(total>0?clamp(y/total,0,1):0).toFixed(4));
   nav.classList.toggle('solid',y>60);
+  if(mobilePerf.matches)return;
   let cur='hero';
   ['hero','tienda','empleo','contacto'].forEach(id=>{const e=document.getElementById(id);if(e&&e.getBoundingClientRect().top<=vh*.4)cur=id});
   if(vh+y>=document.documentElement.scrollHeight-4)cur='contacto';
