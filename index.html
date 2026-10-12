@@ -1000,6 +1000,8 @@ function sizeHz(){
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.55});
 document.querySelectorAll('.checks li').forEach((li,i)=>{li.style.transitionDelay=(i*.12)+'s';io.observe(li)});
 const tl=document.getElementById('tl'),steps=[...tl.querySelectorAll('.st')];
+const stepIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&mobilePerf.matches)e.target.classList.add('on')}),{rootMargin:'0px 0px -28% 0px',threshold:0});
+steps.forEach(s=>stepIO.observe(s));
 
 /* ====== tienda ====== */
 const byId=Object.fromEntries(P.map(p=>[p.id,p]));
@@ -1179,12 +1181,21 @@ document.querySelectorAll('.slide').forEach(el=>slideIO.observe(el));
 /* ====== bucle de scroll ====== */
 const prog=document.querySelector('.prog'),nav=document.getElementById('nav'),root=document.documentElement,hzBar=document.querySelector('.hz-bar');
 let ticking=false,lastLit=-1,lastSpy='';
+const mobileSpyIO=new IntersectionObserver(es=>{
+  if(!mobilePerf.matches)return;
+  const active=es.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+  if(!active)return;
+  const cur=active.target.id;
+  if(cur!==lastSpy){lastSpy=cur;document.querySelectorAll('[data-spy]').forEach(a=>a.classList.toggle('active',a.dataset.spy===cur))}
+},{rootMargin:'-35% 0px -60% 0px',threshold:0});
+['hero','tienda','empleo','contacto'].forEach(id=>{const section=document.getElementById(id);if(section)mobileSpyIO.observe(section)});
 function frame(){
   ticking=false;
   const y=scrollY,vh=innerHeight;
   const total=document.documentElement.scrollHeight-vh;
   prog.style.setProperty('--pg',(total>0?clamp(y/total,0,1):0).toFixed(4));
   nav.classList.toggle('solid',y>60);
+  if(mobilePerf.matches)return;
   let cur='hero';
   ['hero','tienda','empleo','contacto'].forEach(id=>{const e=document.getElementById(id);if(e&&e.getBoundingClientRect().top<=vh*.4)cur=id});
   if(vh+y>=document.documentElement.scrollHeight-4)cur='contacto';
@@ -1192,15 +1203,8 @@ function frame(){
   let si=0;SL.forEach((e,i)=>{if(e.getBoundingClientRect().top<=vh*.45)si=i});
   if(vh+y>=document.documentElement.scrollHeight-4)si=SL.length-1;
   setSlide(si);
-  if(!mobilePerf.matches)root.style.setProperty('--s',clamp(y/vh,0,1.2).toFixed(3));
+  root.style.setProperty('--s',clamp(y/vh,0,1.2).toFixed(3));
   if(rm.matches)return;
-  if(mobilePerf.matches){
-    const tr=tl.getBoundingClientRect();
-    const tp=clamp((vh*.7-tr.top)/tr.height,0,1);
-    tl.style.setProperty('--tp',tp.toFixed(3));
-    steps.forEach(s=>{const sr=s.getBoundingClientRect();s.classList.toggle('on',sr.top<vh*.72)});
-    return;
-  }
 
   // manifiesto
   const mr=maniEl.getBoundingClientRect();
