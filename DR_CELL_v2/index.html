@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr Cell Ecuador · Tecnología que sí alcanza</title>
+<meta name="description" content="Importador directo en Guayaquil. Laptops, iPad, iPhone y Mac revisados en EE.UU. y probados en nuestro laboratorio. Garantía y entrega a domicilio.">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="is-loading">
+<svg class="svg-defs" aria-hidden="true" focusable="false"><defs><clipPath id="phoneClip" clipPathUnits="objectBoundingBox"><path d="M.24 .14H.41Q.48 .14 .48 .21V.83Q.48 .90 .42 .90H.24Q.18 .90 .18 .84V.20Q.18 .14 .24 .14Z"/></clipPath></defs></svg>
+
+<div id="loader" role="status" aria-label="Cargando">
+  <div class="ld">
+    <img src="assets/img/logo.webp" alt="" width="56" height="60">
+    <div class="ld-n"><span id="ldN">00</span><small>%</small></div>
+    <div class="ld-bar"><i id="ldBar"></i></div>
+    <button class="ld-enter" id="ldEnter" type="button">Entrar ↗</button>
+  </div>
+  <p class="ld-foot"><span>Dr Cell · Guayaquil</span><span>Tecnología que sí alcanza</span></p>
+</div>
+
+<header class="top" id="top">
+  <a class="brand" href="#hero"><img src="assets/img/logo.webp" alt="" width="28" height="30"><span>Dr Cell</span></a>
+  <div class="top-r">
+    <a class="pill" href="#tienda">Tienda</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu"><span>Menú</span><i></i></button>
+  </div>
+</header>
+
+<nav class="menu" id="menu" aria-label="Principal" aria-hidden="true" data-lenis-prevent>
+  <a href="#hero"><b>01</b>Inicio</a><a href="#proceso"><b>02</b>Proceso</a><a href="#cats"><b>03</b>Catálogo</a><a href="#remates"><b>04</b>Remates</a>
+  <a href="#tienda"><b>05</b>Tienda</a><a href="#clientes"><b>06</b>Clientes</a><a href="#empleo"><b>07</b>Trabaja con nosotros</a><a href="#contacto"><b>08</b>Contacto</a>
+  <a href="https://www.drcellguayaquil.com/web/login" target="_blank" rel="noopener"><b>09</b>Iniciar sesión</a>
+  <a class="menu-wa" data-wa="Hola Dr Cell, quiero información." href="#">Escríbenos por WhatsApp ↗</a>
+</nav>
+
+<div class="rail" aria-hidden="true"><b id="railN">01</b><span>/ 08</span><em id="railT">Inicio</em><i><u id="railBar"></u></i></div>
+<a class="wa-fab" data-wa="Hola Dr Cell, quiero información." href="#" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5z"/><path d="M9 8.5c0 3.5 3 6.500 6.500 6.500l1-1.500-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2z"/></svg></a>
+
+<main>
+<section class="hero dk" id="hero" data-ch="Inicio">
+  <div class="hero-glow"></div>
+  <div class="hero-copy">
+    <p class="kicker">Importador directo · Guayaquil</p>
+    <h1 id="h1" aria-label="Tecnología que sí alcanza.">Tecnología que <em>sí</em> alcanza.</h1>
+    <p class="lead">Laptops, iPad, iPhone y Mac revisados en EE.UU. y probados otra vez en nuestro laboratorio antes de llegar a ti.</p>
+    <div class="cta"><a class="btn btn-red mag" href="#tienda">Ver tienda</a><a class="btn btn-ghost mag" data-wa="Hola Dr Cell, quiero información." href="#">WhatsApp</a></div>
+  </div>
+  <div class="stage" id="stage" role="group" aria-label="iPad y laptops">
+    <i class="ring r1"></i><i class="ring r2"></i>
+    <div class="layer l-ipad" data-d=".6"><img src="assets/img/cut-ipad-7.webp" alt="iPad de séptima generación"></div>
+    <div class="layer l-hp" data-d="1.1"><img src="assets/img/cut-hp-ryzen5-pro.webp" alt="HP Ryzen 5 Pro"></div>
+    <div class="layer l-len" data-d="1.6"><img src="assets/img/cut-lenovo-300e.webp" alt="Lenovo 300e convertible"></div>
+    <div class="layer l-phone" data-d="1.35"><img src="assets/img/iphone-16e.webp" alt="iPhone 16e"></div>
+    <div class="layer l-badge" data-d="2"><span class="badge">iPad desde <b>$50</b></span></div>
+  </div>
+</section>
+
+<section class="mani lt stack">
+  <p id="mani">Tecnología accesible para todos. Equipos garantizados y repotenciados, probados en nuestro propio laboratorio.</p>
+  <small data-reveal>Estudio, trabajo y uso diario sin pagar de más. Baratito como te gusta.</small>
+</section>
+
+<section class="proceso dk stack" id="proceso" data-ch="Proceso">
+  <div class="sec-head"><p class="eyebrow">Cómo trabajamos</p><h2 data-split>Tres pasos, <em>cero sorpresas.</em></h2></div>
+  <div class="pr-grid">
+    <div class="pr-sticky" id="prSticky" aria-hidden="true">
+      <figure class="ph p34"><img src="assets/img/cliente-feliz-4.webp" alt=""></figure>
+      <figure class="ph p34"><img src="assets/img/cliente-feliz-3.webp" alt=""></figure>
+      <figure class="ph p34"><img src="assets/img/cliente-feliz-5.webp" alt=""></figure>
+    </div>
+    <div class="pr-steps">
+      <article class="pr-step"><figure class="ph p34"><img src="assets/img/cliente-feliz-4.webp" alt="Cliente con su laptop en Dr Cell"></figure><div><p class="eyebrow">01 — Importado</p><h3>Revisado <em>en EE.UU.</em></h3><p>Primera revisión y repotenciación antes de la importación.</p></div></article>
+      <article class="pr-step"><figure class="ph p34"><img src="assets/img/cliente-feliz-3.webp" alt="Cliente con su laptop Dell"></figure><div><p class="eyebrow">02 — Probado</p><h3>Otra vez, <em>en Guayaquil.</em></h3><p>Pruebas, mantenimiento y control de calidad en nuestro laboratorio técnico.</p></div></article>
+      <article class="pr-step"><figure class="ph p34"><img src="assets/img/cliente-feliz-5.webp" alt="Cliente con su iPhone"></figure><div><p class="eyebrow">03 — Entregado</p><h3>Con garantía <em>y factura.</em></h3><p>Muchos modelos incluyen 6 meses. Envíos a todo el país y atención por WhatsApp.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="cats lt stack" id="cats" data-ch="Catálogo">
+  <div class="sec-head"><p class="eyebrow">Catálogo</p><h2 data-split>Elige tu <em>mundo.</em></h2></div>
+  <div class="cat-grid" id="catGrid"></div>
+</section>
+
+<section class="remates dk stack" id="remates" data-ch="Remates">
+  <div class="sec-head row-head"><div><p class="eyebrow">Remates</p><h2 data-split>Los más <em>baratos.</em></h2></div><div class="arrows"><button data-row="remRow" data-dir="-1" aria-label="Anterior">←</button><button data-row="remRow" data-dir="1" aria-label="Siguiente">→</button></div></div>
+  <div class="row" id="remRow"></div>
+  <div class="nums-grid" id="nums"></div>
+</section>
+
+<section class="shop lt stack" id="tienda" data-ch="Tienda">
+  <div class="sec-head shop-head"><h2 data-split>Elige tu <em>equipo.</em></h2><p id="count" aria-live="polite"></p></div>
+  <div class="chips" id="chips" role="group" aria-label="Filtrar por categoría"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="clients dk stack" id="clientes" data-ch="Clientes">
+  <div class="sec-head row-head"><div><p class="eyebrow">Clientes satisfechos</p><h2 data-split>Eso es <em>lo nuestro.</em></h2></div><div class="arrows"><button data-row="strip" data-dir="-1" aria-label="Anterior">←</button><button data-row="strip" data-dir="1" aria-label="Siguiente">→</button></div></div>
+  <div class="row" id="strip"></div>
+  <div class="voices" id="voices"></div>
+</section>
+
+<section class="jobs lt stack" id="empleo" data-ch="Empleo">
+  <p class="eyebrow">Ofertas de trabajo</p>
+  <h2 data-split>Trabaja <em>desde casa.</em></h2>
+  <p class="jobs-lead">Genera ingresos sin inversión inicial. Tú recomiendas, nosotros nos encargamos del inventario, el envío y la atención.</p>
+  <ol class="steps" id="steps">
+    <li><b>1</b><div><h3>Regístrate como afiliado</h3><p>Sin costo.</p></div></li>
+    <li><b>2</b><div><h3>Promociona los productos</h3><p>WhatsApp, Facebook, Instagram, TikTok.</p></div></li>
+    <li><b>3</b><div><h3>Gana comisiones</h3><p>Por cada venta. Pagos semanales.</p></div></li>
+    <li><b>4</b><div><h3>Sin inventario ni envíos</h3><p>Nosotros nos encargamos de todo.</p></div></li>
+    <li><b>5</b><div><h3>Material y apoyo</h3><p>Contenido, imágenes y soporte.</p></div></li>
+  </ol>
+  <a class="btn btn-dark mag" data-wa="QUIERO" href="#">Escribe “QUIERO” ↗</a>
+</section>
+</main>
+
+<footer class="foot stack" id="contacto" data-ch="Contacto">
+  <p class="eyebrow">Contáctanos</p>
+  <h2 data-split>Baratito <em>como te gusta.</em></h2>
+  <div class="cta"><a class="btn btn-dark mag" data-wa="Hola Dr Cell, quiero información." href="#">WhatsApp ↗</a><a class="btn btn-line mag" href="tel:+593999958488">+593 99 995 8488</a></div>
+  <ul class="meta">
+    <li><span>Ubicación</span>Guayaquil, Ecuador</li>
+    <li><span>Envíos</span>A todo el país</li>
+    <li><span>Síguenos</span><a href="https://www.drcellguayaquil.com/website/social/instagram" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.drcellguayaquil.com/website/social/tiktok" target="_blank" rel="noopener">TikTok</a></li>
+    <li><span>Cuenta</span><a href="https://www.drcellguayaquil.com/web/login" target="_blank" rel="noopener">Iniciar sesión</a></li>
+  </ul>
+  <p class="legal">© 2026 Dr Cell Ecuador · Laboratorio técnico propio</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/motion.js"></script>
+</body>
+</html>
