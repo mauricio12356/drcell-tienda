@@ -1,0 +1,43 @@
+/* Datos del catálogo */
+const WA='593999958488';
+const wa=t=>`https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+const img=id=>`assets/img/${id}.webp`;
+const P = [
+  {id:'hp-ryzen5-pro',cat:'laptop',name:'HP Ryzen 5 Pro',specs:['16 GB RAM','256 GB SSD'],price:320,tag:'Grado A+'},
+  {id:'chromebook-dell-4',cat:'laptop',name:'Chromebook Dell',specs:['4 GB RAM','16 GB'],price:60,tag:'Grado A+'},
+  {id:'chromebook-dell-360',cat:'laptop',name:'Chromebook Dell 360',specs:['4 GB RAM','16 GB','Táctil'],price:75,tag:'Grado A+'},
+  {id:'lenovo-300e',cat:'laptop',name:'Lenovo 300e 2nd',specs:['AMD 3015e','8 GB RAM','128 GB SSD','11" táctil 360°'],price:130,tag:'6 meses de garantía'},
+  {id:'dell-latitude-7490',cat:'laptop',name:'Dell Latitude 7490',specs:['i7 8va','8 GB RAM','128 GB SSD'],price:260},
+  {id:'hp-745-g6',cat:'laptop',name:'HP EliteBook 745 G6',specs:['Ryzen 5 Pro 3500','8 GB RAM','256 GB SSD','14" táctil + huella'],price:295,tag:'6 meses de garantía'},
+  {id:'dell-3310',cat:'laptop',name:'Dell 3310 2 en 1',specs:['i5 8va','8 GB RAM','256 GB SSD','13" táctil 360°'],price:300,tag:'6 meses de garantía'},
+  {id:'hp-850-g5',cat:'laptop',name:'HP EliteBook 850 G5',specs:['i7 8va','8 GB RAM','256 GB SSD'],price:310},
+  {id:'dell-5310',cat:'laptop',name:'Dell 5310',specs:['i7 10ma','8 GB RAM','256 GB SSD','13"'],price:330,tag:'6 meses de garantía'},
+  {id:'hp-850-g6',cat:'laptop',name:'HP EliteBook 850 G6',specs:['i5 8va','8 GB RAM','256 GB SSD','15"'],price:330,tag:'6 meses de garantía'},
+  {id:'thinkpad-chromebook',cat:'laptop',name:'ThinkPad Chromebook',specs:['i7 12va','16 GB RAM','256 GB SSD','Táctil'],price:380},
+  {id:'imac-21',cat:'mac',name:'iMac 21"',specs:['i5','8 GB RAM','1 TB'],price:300},
+  {id:'macbook-i9',cat:'mac',name:'MacBook Core i9',specs:['i9','32 GB RAM','500 GB SSD'],price:580},
+  {id:'macbook-pro-i7',cat:'mac',name:'MacBook Pro i7',specs:['i7','16 GB RAM','512 GB SSD'],price:580},
+  {id:'ipad-mini-1',cat:'ipad',name:'iPad mini 1',specs:['16 GB'],price:50,tag:'Como nueva de vitrina'},
+  {id:'ipad-mini-2',cat:'ipad',name:'iPad mini 2',specs:['Grado A+'],price:55,tag:'Grado A+'},
+  {id:'ipad-mini-3-64',cat:'ipad',name:'iPad mini 3',specs:['64 GB','Space Gray'],price:65,tag:'6 meses de garantía'},
+  {id:'ipad-mini-3-16',cat:'ipad',name:'iPad mini 3',specs:['16 GB','Space Gray'],price:75,tag:'6 meses de garantía'},
+  {id:'ipad-air-1-16',cat:'ipad',name:'iPad Air 1',specs:['16 GB'],price:75,tag:'Grado A+'},
+  {id:'ipad-air-1-32',cat:'ipad',name:'iPad Air 1',specs:['32 GB'],price:75},
+  {id:'ipad-air-2-16',cat:'ipad',name:'iPad Air 2',specs:['16 GB'],price:80},
+  {id:'ipad-air-2-64',cat:'ipad',name:'iPad Air 2',specs:['64 GB','Space Gray'],price:110,tag:'6 meses de garantía'},
+  {id:'ipad-5',cat:'ipad',name:'iPad 5ª generación',specs:['32 GB','Space Gray'],price:110,tag:'6 meses de garantía'},
+  {id:'ipad-6',cat:'ipad',name:'iPad 6ª generación',specs:['9,7"','32 GB','Wi-Fi'],price:120,tag:'Grado A+'},
+  {id:'ipad-7',cat:'ipad',name:'iPad 7ª generación',specs:['10,2"','32 GB','Wi-Fi'],price:155},
+  {id:'ipad-9',cat:'ipad',name:'iPad 9ª generación',specs:['256 GB'],price:290},
+  {id:'ipad-air-4',cat:'ipad',name:'iPad Air 4',specs:['64 GB'],price:300},
+  {id:'iphone-14-128',cat:'iphone',name:'iPhone 14',specs:['128 GB'],price:340},
+  {id:'iphone-13-caja',cat:'iphone',name:'iPhone 13 con caja',specs:['128 GB','Batería 100%'],price:360,tag:'Con caja'},
+  {id:'iphone-14-caja',cat:'iphone',name:'iPhone 14 con caja',specs:['128 GB'],price:410,tag:'Con caja'},
+  {id:'iphone-14-plus',cat:'iphone',name:'iPhone 14 Plus',specs:['128 GB'],price:410},
+  {id:'iphone-16e',cat:'iphone',name:'iPhone 16e',specs:['128 GB'],price:410},
+  {id:'iphone-13-pro',cat:'iphone',name:'iPhone 13 Pro',specs:['128 GB','Batería 100%'],price:440},
+  {id:'iphone-15',cat:'iphone',name:'iPhone 15',specs:['256 GB','Batería 100%'],price:520,tag:'Excelente estado'},
+  {id:'iphone-14-pro',cat:'iphone',name:'iPhone 14 Pro',specs:['512 GB'],price:530},
+  {id:'iphone-16',cat:'iphone',name:'iPhone 16',specs:['128 GB'],price:600},
+  {id:'iphone-16-plus',cat:'iphone',name:'iPhone 16 Plus',specs:['256 GB'],price:690}
+];
